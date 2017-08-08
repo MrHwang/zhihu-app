@@ -11,8 +11,11 @@
         "naux/sendcloud": "1.1.*"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^2.4",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
+        "mpociot/laravel-test-factory-helper": "^0.4.0",
         "phpunit/phpunit": "~5.0",
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*"

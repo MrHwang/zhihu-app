@@ -23,7 +23,7 @@ Laravel使用5.3版本，Vue.js使用2.0版本
 - phpstorm中设置app目录为Resource Root
     > 在 app 目录下创建新的文件夹或者 php 文件的时候，只要符合 psr-4 的标准，phpstorm 就会自动加上命名空间
 - 用户表结构设计
-
+   `$ php artisan migration`
 
 #### 用户注册
 
@@ -32,3 +32,15 @@ Laravel使用5.3版本，Vue.js使用2.0版本
     `composer require guzzlehttp/guzzle`和`composer require naux/sendcloud`
 
 - 配置sendcloud
+    - `.env`文件中配置MAIL_DRIVER/SEND_CLOUD_USER/SEND_CLOUD_KEY,`.env`文件中需要注意大小写，注释，如`MAIL_DRIVER=sendCloud`会提示`Driver [sendCloud] not found`，准确设置应该是`MAIL_DRIVER=sendcloud`
+    -  配置`app.php`文件
+- 使用Laravel自带的登录注册功能
+    `$ php artisan route:list`
+    `$ php artisan make:auth`
+    `$ php artisan rote:list`
+
+- 引入Laravel开发三件套 
+    > https://segmentfault.com/a/1190000005085328;http://www.bcty365.com/content-153-5897-1.html
+    1. `composer require barryvdh/laravel-debugbar --dev`（页面调试）
+    2. `composer require barryvdh/laravel-ide-helper --dev`、`php artisan ide-helper:generate`和`php artisan ide-helper:models`（代码补全）
+    3. `composer require mpociot/laravel-test-factory-helper --dev`（数据生成）

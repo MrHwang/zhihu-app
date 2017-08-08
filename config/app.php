@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Naux\Mail\SendCloudServiceProvider::class,
+
         //
 
         /*
@@ -178,6 +179,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         *Develop Plugin
+         */
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
     ],
 
     /*
