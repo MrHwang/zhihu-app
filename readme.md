@@ -51,4 +51,9 @@ Laravel使用5.3版本，Vue.js使用2.0版本
 - 引入laracasts/flash
     > https://github.com/laracasts/flash
     `composer require laracasts/flash`
-- 
+
+#### 本地化和自定义消息
+
+- 引入overtrue/laravel-lang
+    > https://github.com/overtrue/laravel-lang
+    `composer require "overtrue/laravel-lang:~3.0"`
