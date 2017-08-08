@@ -40,7 +40,15 @@ Laravel使用5.3版本，Vue.js使用2.0版本
     `$ php artisan rote:list`
 
 - 引入Laravel开发三件套 
-    > https://segmentfault.com/a/1190000005085328;http://www.bcty365.com/content-153-5897-1.html
+    > https://segmentfault.com/a/1190000005085328
+    > http://www.bcty365.com/content-153-5897-1.html
     1. `composer require barryvdh/laravel-debugbar --dev`（页面调试）
     2. `composer require barryvdh/laravel-ide-helper --dev`、`php artisan ide-helper:generate`和`php artisan ide-helper:models`（代码补全）
     3. `composer require mpociot/laravel-test-factory-helper --dev`（数据生成）
+    
+#### 用户登录
+
+- 引入laracasts/flash
+    > https://github.com/laracasts/flash
+    `composer require laracasts/flash`
+- 
