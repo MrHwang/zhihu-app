@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Mail;
+use Naux\Mail\SendCloudTemplate;
 
 /**
  * App\User
@@ -68,4 +70,34 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    /**
+     * ForgortPasswordController -> SendsPasswordResetEmails:sendResetLinkEmail -> PasswordBroker ->CanResetPassword:sendPasswordResetNotification
+     * -> ResetPassword:toMail
+     *
+     * @param string $token
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        //$this->notify(new ResetPasswordNotification($token));
+        $bind_data = [
+            'url' => url('password/reset', $token),
+        ];
+        $template = new SendCloudTemplate('zhihu_app_password_reset', $bind_data);
+
+        Mail::raw($template, function ($message){
+            $message->from('longjian.hwang@gmail.com', 'Zhihu');
+
+            $message->to($this->email);
+        });
+    }
+
+    /*public function toMail($notifiable)
+    {
+        return (new MailMessage)
+            ->line('You are receiving this email because we received a password reset request for your account.')
+            ->action('Reset Password', url('password/reset', $this->token))
+            ->line('If you did not request a password reset, no further action is required.');
+    }*/
 }
