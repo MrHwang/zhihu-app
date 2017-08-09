@@ -60,3 +60,6 @@ Laravel使用5.3版本，Vue.js使用2.0版本
     
 #### 实现找回密码
 
+#### 设计问题表
+
+- `php artisan make:model Question -m`
