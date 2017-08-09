@@ -62,4 +62,15 @@ Laravel使用5.3版本，Vue.js使用2.0版本
 
 #### 设计问题表
 
-- `php artisan make:model Question -m`
+- `php artisan make:model Question -m
+
+#### 发布问题
+
+- 引用UEditor
+    `composer require "overtrue/laravel-ueditor:~1.0"`
+    > https://github.com/overtrue/laravel-ueditor
+
+- `php artisan make:controller QuestionsController --resource`
+- Laravel 5.3 UEditor图片上传失败问题
+    > php artisan storkage:link
+    > https://stackoverflow.com/questions/39496598/laravel-5-3-storagelink-symlink-protocol-error
