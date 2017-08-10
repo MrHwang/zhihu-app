@@ -38,6 +38,11 @@ class QuestionsController extends Controller
     public function store(Request $request)
     {
         //
+        $rules = [
+            'title' =>  'required|min:6|max:196',
+            'body'  =>  'required|min:6'
+        ];
+        $this->validate($request,$rules);
         $data = [
             'title' =>  $request->get('title'),
             'body'  =>  $request->get('body'),

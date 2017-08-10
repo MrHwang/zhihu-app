@@ -74,3 +74,6 @@ Laravel使用5.3版本，Vue.js使用2.0版本
 - Laravel 5.3 UEditor图片上传失败问题
     > php artisan storkage:link
     > https://stackoverflow.com/questions/39496598/laravel-5-3-storagelink-symlink-protocol-error
+    
+- 验证问题表单字段
+    1. validator验证
