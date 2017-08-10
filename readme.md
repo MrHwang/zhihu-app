@@ -75,7 +75,18 @@ Laravel使用5.3版本，Vue.js使用2.0版本
     > php artisan storkage:link
     > https://stackoverflow.com/questions/39496598/laravel-5-3-storagelink-symlink-protocol-error
     
-- 验证问题表单字段
-    1. validator验证
-    2. request验证(对Question中的store方法进行Request注入/验证)
+#### 验证问题表单字段
+
+- validator验证
+- request验证(对Question中的store方法进行Request注入/验证)
     `php artisan make:request StoreQuestionRequest`
+    
+#### 美化编辑器
+
+- 使用`simple-ueditor`替换`public/vender/ueditor`
+> https://github.com/JellyBool/simple-ueditor
+
+```
+$ cd ~/Code
+$ git clone https://github.com/JellyBool/simple-ueditor.git
+```

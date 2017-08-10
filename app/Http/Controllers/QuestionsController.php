@@ -46,8 +46,7 @@ class QuestionsController extends Controller
         ];
 
         $question = Question::create($data);
-        dd($question);
-        return redirect()->route('question.show',[$question->id]);
+        return redirect()->route('questions.show',[$question->id]);
     }
 
     /**
