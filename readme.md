@@ -90,3 +90,11 @@ Laravel使用5.3版本，Vue.js使用2.0版本
 $ cd ~/Code
 $ git clone https://github.com/JellyBool/simple-ueditor.git
 ```
+
+#### 定义话题与问题的关系
+
+- `php artisan make:model Topic -m`
+- 话题与问题关联关系表
+`php artisan make:migration create_questions_topics_table --create=question_topic`
+- `php artisan migrate`
+- Topic与Question模型建立关联关系
