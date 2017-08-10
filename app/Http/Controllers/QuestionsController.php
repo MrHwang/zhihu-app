@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreQuestionRequest;
 use App\Question;
 use Auth;
 use Illuminate\Http\Request;
@@ -35,14 +36,9 @@ class QuestionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreQuestionRequest $request)
     {
         //
-        $rules = [
-            'title' =>  'required|min:6|max:196',
-            'body'  =>  'required|min:6'
-        ];
-        $this->validate($request,$rules);
         $data = [
             'title' =>  $request->get('title'),
             'body'  =>  $request->get('body'),

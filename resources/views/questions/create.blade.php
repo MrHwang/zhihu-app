@@ -21,11 +21,16 @@
                                 @endif
                             </div>
 
-                            <div class="form-group {{$errors->has('body') ? ' has-error' : ''}}">
+                            <div class="form-group {{ $errors->has('body') ? ' has-error' : ''}}">
                                 <!-- 编辑器容器 -->
                                 <script id="container" name="body" type="text/plain">
                                     {!! old('body') !!}
                                 </script>
+                                @if($errors->has('body'))
+                                    <span class="help-block">
+                                        <strong>{{$errors->first('body')}}</strong>
+                                    </span>
+                                @endif
                             </div>
 
                             <button class="btn btn-success pull-right" type="submit">发布问题</button>

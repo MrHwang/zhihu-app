@@ -77,3 +77,5 @@ Laravel使用5.3版本，Vue.js使用2.0版本
     
 - 验证问题表单字段
     1. validator验证
+    2. request验证(对Question中的store方法进行Request注入/验证)
+    `php artisan make:request StoreQuestionRequest`
