@@ -4,8 +4,6 @@
 
 Laravel使用5.3版本，Vue.js使用2.0版本
 
-### day01
-
 #### 开发准备
 
 - win10 64位系统，vagrant1.9.7（截止到目前2017-08-07最新版），VirtualBox5.1.26（截止到目前2017-08-07最新版）
@@ -98,3 +96,47 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 `php artisan make:migration create_questions_topics_table --create=question_topic`
 - `php artisan migrate`
 - Topic与Question模型建立关联关系
+
+#### 使用select2优化话题选择
+
+> https://select2.github.io/examples.html
+> https://select2.github.io/
+
+- 下载select2的css文件
+    ```
+    $ cd ~/Code/zhihu-app/resources/assets`
+    $ mkdir css
+    $ cd ~/Code/zhihu-app/resources/assets/css
+    $ wget https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css
+    ```
+    
+-  下载slelect2的js文件
+    ```
+    $ ~/Code/zhihu-app/resources/assets/js
+    $ wget https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js
+    ```
+
+-  bootstrap.js中配置加载select2.min.js
+-  app.scss配置加载select2.min.css
+-  gulp编译
+    > https://npm.taobao.org/
+    > https://github.com/cnpm/cnpm
+    - `sudo npm install -g cnpm --registry=https://registry.npm.taobao.org`
+    - `cpm install`
+    - `gulp`
+    
+**或者**
+- `$ yarn config set registry https://registry.npm.taobao.org`
+- `$ yarn install`
+
+- 解决/预防css缓存问题
+    1. gulpfile.js中使用` mix.version(['js/app.js','css/app.css'])`
+    2. app.blade.php中使用 `{{ elixr('css/app.css') }}`代替`'/css/app.css'`,`{{elixir('js/app.js')}}`代替`'/css/app.css'`
+
+- 生成测试数据
+    - 编辑ModelFactory
+    - `php artisan tinker`或者`tinker`
+    - 测试能否准确生成`>>> factory(App\Topic::class,11)->make()`
+    - 生成数据`>>> factory(App\Topic::class,11)->create()`
+- 测试路由
+`http://zhihu.dev/api/topics?q=at`
