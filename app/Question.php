@@ -14,6 +14,6 @@ class Question extends Model
         // belongsToMany第二个参数可以传入自定义的关联表名
         // 关联表默认是单数下划线间隔，如question_table
         // withTimestamps决定是否添加时间戳到关联表中
-        return $this->belongsToMany(Topic::class,'question_table')->withTimestamps();
+        return $this->belongsToMany(Topic::class,'question_topic')->withTimestamps();
     }
 }
