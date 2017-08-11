@@ -38,11 +38,12 @@ class QuestionsController extends Controller
         return view("questions.create");
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param StoreQuestionRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreQuestionRequest $request)
     {
@@ -82,18 +83,35 @@ class QuestionsController extends Controller
     public function edit($id)
     {
         //
+        $question = $this->questionRepository->byId($id);
+        if(Auth::user()->owns($question)){
+            return view('questions.edit',compact('question'));
+        }
+        return back();
     }
+
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param StoreQuestionRequest $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(StoreQuestionRequest $request, $id)
     {
         //
+        $question = $this->questionRepository->byId($id);
+        $question->update([
+                'title' => $request->get('title'),
+                'body'  => $request->get('body')
+            ]
+        );
+
+        $topics = $this->questionRepository->normalizeTopic($request->get('topics'));
+        $question->topics()->sync($topics);
+
+        return redirect()->route('questions.show',[$question->id]);
     }
 
     /**

@@ -1,3 +1,4 @@
+
 ## Laravel vue.js开发知乎实例
 
 ### 版本说明
@@ -147,3 +148,7 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 
 > 当Controller中处理业务请求需要调用多个Model获取数据时，就需要在Controller中引用多个Model来获取数据，在大型项目中，这便会让Controller看起来非常臃肿。但，如果把这些获取多个Model的数据的处理放在某一个Model中，会让这个Model变得没有预期的那么“纯粹”（一个Model预期只处理一个表的数据获取/转换等）。换一种思路就是，在某个Controller和多个Model中分出一个Repository，这个Repository中来引入Model来处理业务，这种方式一方面简化了Controller代码，也能保留对Model层的预期。
 > 比如，场景：查询某个订单的详细信息，需要查询订单表、订单商品表、仓库表(订单中的发货仓库id查询仓库表得到仓库名称)等。
+
+#### 实现编辑问题
+
+
