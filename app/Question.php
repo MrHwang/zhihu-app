@@ -16,4 +16,14 @@ class Question extends Model
         // withTimestamps决定是否添加时间戳到关联表中
         return $this->belongsToMany(Topic::class,'question_topic')->withTimestamps();
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('is_hidden','F');
+    }
 }

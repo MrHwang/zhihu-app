@@ -34,4 +34,12 @@ class QuestionRepository
         }
         )->toArray();
     }
+
+    public function getQuestionsFeed()
+    {
+        // with('user' 使用Question模型中的user方法关联users表)
+        //return Question::latest('updated_at')->with('user')->get();
+        // published() 对应Question模型中的scopePublished
+        return Question::published()->latest('updated_at')->with('user')->get();
+    }
 }
