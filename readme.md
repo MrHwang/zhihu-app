@@ -153,8 +153,8 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 
 #### 问题Feed和删除问题
 
--  显示问题列表
-
+- 显示问题列表
+- 删除问题
 
 
 
