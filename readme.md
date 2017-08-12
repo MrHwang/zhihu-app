@@ -156,5 +156,10 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 - 显示问题列表
 - 删除问题
 
+#### 创建问题的答案
+
+- `php artisan make:model Answer -m`
+- `php artisan migrate`
+- 定义关系/关联表
 
 
