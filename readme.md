@@ -162,4 +162,7 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 - `php artisan migrate`
 - 定义关系/关联表
 
+#### 实现提交答案
 
+- `php artisan make:controller AnswerController`
+- `php artisam make:request StoreAnswerRequest`

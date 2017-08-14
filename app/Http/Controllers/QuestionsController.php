@@ -72,7 +72,8 @@ class QuestionsController extends Controller
     {
         // with('topics')中的'topics'是Question模型中function topics的方法名
         // $question = Question::where('id',$id)->with('topics')->first();
-        $question = $this->questionRepository->byIdWithTopics($id);
+        $question = $this->questionRepository->byIdWithTopicsAndAnswers($id);
+        //dd($question->answers);
         return view('questions.show',compact('question'));
     }
 

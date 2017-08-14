@@ -7,9 +7,10 @@ use App\Topic;
 
 class QuestionRepository
 {
-    public function byIdWithTopics($id)
+    public function byIdWithTopicsAndAnswers($id)
     {
-        return Question::where('id',$id)->with('topics')->first();
+        // with(['topics','answers'])对应Question模型中的topics/answers方法
+        return Question::where('id',$id)->with(['topics','answers'])->first();
     }
 
     public function byId($id)
