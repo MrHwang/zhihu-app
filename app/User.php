@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Mail;
 use Naux\Mail\SendCloudTemplate;
 
@@ -69,5 +69,13 @@ class User extends Authenticatable
     public function answers()
     {
         return $this->hasMany(Answer::class);
+    }
+
+    public function follows($question)
+    {
+       return Follow::create([
+           'question_id' => $question,
+           'user_id' => $this->id
+       ]);
     }
 }

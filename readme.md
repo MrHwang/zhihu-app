@@ -166,3 +166,13 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 
 - `php artisan make:controller AnswerController`
 - `php artisam make:request StoreAnswerRequest`
+
+#### 用户关注问题
+
+- 登录用户才能提交答案
+- 用户登录成功返回之前浏览页面
+- 一个用户可以关注多个问题，一个问题可以被多个用户关注(创建关联关系)
+`php artisan make:migration create_user_question_table --ccreate=user_question`
+`php artisan migrate`
+`php artisan make:model Follow`
+`php artisan make:controller QuestionFollowController`
