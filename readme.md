@@ -176,3 +176,20 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 `php artisan migrate`
 `php artisan make:model Follow`
 `php artisan make:controller QuestionFollowController`
+
+#### 使用Vuejs组件化
+
+- phpstorm安装Vuejs插件（语法支持）/ Setting -> Languages & Frameworks -> Javascript -> Version -> ECMAScript 6
+- QuestionFollowButton.vue
+- 定义路由
+- app.js中引入vue组件
+- gulp
+- gulp后vue组件修改需要重新gulp?
+- show.blade中使用<question-follow-button></question-follow-button>使用vue组件
+- vuejs的property传递参数
+
+**遇到的问题**：
+QuestionFollowButton.vue中声明的路由`'api/question/follower'`对应的路由是`http://zhihu.dev/questions/api/question/follower`，准确写法为
+`'/api/question/follower'`
+
+
