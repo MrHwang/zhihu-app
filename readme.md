@@ -184,7 +184,7 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 - 定义路由
 - app.js中引入vue组件
 - gulp
-- gulp后vue组件修改需要重新gulp?
+- gulp后vue组件修改需要重新gulp
 - show.blade中使用<question-follow-button></question-follow-button>使用vue组件
 - vuejs的property传递参数
 
@@ -192,4 +192,16 @@ $ git clone https://github.com/JellyBool/simple-ueditor.git
 QuestionFollowButton.vue中声明的路由`'api/question/follower'`对应的路由是`http://zhihu.dev/questions/api/question/follower`，准确写法为
 `'/api/question/follower'`
 
+#### 前后端分离 API token 认证
+
+- `config/auth.php`中的guards可以看出api中间件使用token来进行验证
+- `TokenGuard.php`中可以看出Token需要以api_token来传值，getTokenForRequest可以看出包含三种验证方式
+    - get方式
+    - 。。
+    - 。。
+- `php artisan make:migration add_api_token_to_users --table=users`字段名必须是api_token
+- `php artisan migrate`
+- `php artisan tinker`
+- `str_random(60)`生成的随机字符串`VuDgFlJ3f2zkcE682fsEJPq1ZH3mh17PTZ28e2oK0rDEdIH6JGtvwooefqdW`填入到users表中
+   
 
